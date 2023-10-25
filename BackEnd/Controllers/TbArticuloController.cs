@@ -18,39 +18,96 @@ namespace BackEnd.Controllers
             tbArticuloDAL = new TbArticuloDALImpl(new Entities.GeCrmContext());
         }
 
+        #region Obtener artículo
         // GET: api/<TbArticuloController>
         [HttpGet]
         public JsonResult Get()
         {
-            IEnumerable<TbArticulo> articulos;
-            articulos = tbArticuloDAL.GetAll();
+            try
+            {
+                IEnumerable<TbArticulo> articulos;
+                articulos = tbArticuloDAL.GetAll();
 
-            return new JsonResult(articulos);
+                return new JsonResult(articulos);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
+        #endregion
 
+        #region Obtener artículo ID
         // GET api/<TbArticuloController>/5
         [HttpGet("{id}")]
-        public string Get(int id)
+        public JsonResult Get(int id)
         {
-            return "value";
+            try
+            {
+                TbArticulo articulo = tbArticuloDAL.Get(id);
+                return new JsonResult(articulo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        #endregion
 
+        #region Agregar artículo
         // POST api/<TbArticuloController>
         [HttpPost]
-        public void Post([FromBody] string value)
+        public JsonResult Post([FromBody] TbArticulo articulo)
         {
+            try
+            {
+                tbArticuloDAL.Add(articulo);
+                return new JsonResult(articulo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        #endregion
 
+        #region Actualizar artículo
         // PUT api/<TbArticuloController>/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody] string value)
+        [HttpPut]
+        public JsonResult Put([FromBody] TbArticulo articulo)
         {
+            try
+            {
+                tbArticuloDAL.Update(articulo);
+                return new JsonResult(articulo);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
+        #endregion
 
+        #region Eliminar artículo
         // DELETE api/<TbArticuloController>/5
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public string Delete(int id)
         {
+            try
+            {
+                TbArticulo articulo = new TbArticulo
+                {
+                    IdArticulo = id,
+                };
+                tbArticuloDAL.Remove(articulo);
+                return "Exito";
+            }
+            catch (Exception e)
+            {
+                return e.Message;
+            }
         }
+        #endregion
     }
 }
