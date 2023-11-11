@@ -41,7 +41,7 @@ public partial class GeCrmContext : DbContext
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=.;Database=GE_CRM;Integrated Security=True;Trusted_Connection=True;TrustServerCertificate=True");
+        => optionsBuilder.UseSqlServer("Server=.;Database=GE_CRM;Integrated Security=True;Trusted_Connection=True ;TrustServerCertificate=True");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -49,7 +49,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdArticulo).HasName("PK_IdArticulo");
 
-            entity.ToTable("tbArticulo", tb => tb.HasTrigger("InsertBitArticulo"));
+            entity.ToTable("tbArticulo");
 
             entity.HasIndex(e => new { e.IdArticulo, e.NumSerie, e.NumParte }, "AK_Articulo_NumSerie_NumParte").IsUnique();
 
@@ -100,7 +100,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdCliente).HasName("PK_IdCliente");
 
-            entity.ToTable("tbCliente", tb => tb.HasTrigger("InsertBitCliente"));
+            entity.ToTable("tbCliente");
 
             entity.HasIndex(e => e.IdCliente, "AK_IdCliente").IsUnique();
 
@@ -125,11 +125,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdCompra).HasName("PK_IdCompra");
 
-            entity.ToTable("tbDatosCompra", tb =>
-                {
-                    tb.HasTrigger("InsertBitdcompra");
-                    tb.HasTrigger("tbCompraDeleteTrigger");
-                });
+            entity.ToTable("tbDatosCompra");
 
             entity.HasIndex(e => e.IdCompra, "AK_IdCompra").IsUnique();
 
@@ -157,11 +153,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdVenta).HasName("PK_IdVenta");
 
-            entity.ToTable("tbDatosVenta", tb =>
-                {
-                    tb.HasTrigger("InsertBitdventa");
-                    tb.HasTrigger("tbVentaDeleteTrigger");
-                });
+            entity.ToTable("tbDatosVenta");
 
             entity.HasIndex(e => e.IdVenta, "AK_IdVenta").IsUnique();
 
@@ -190,7 +182,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdEmpleado).HasName("PK_IdEmpleado");
 
-            entity.ToTable("tbEmpleado", tb => tb.HasTrigger("InsertBitEmpleado"));
+            entity.ToTable("tbEmpleado");
 
             entity.HasIndex(e => e.Cedula, "AK_Cedula").IsUnique();
 
@@ -231,7 +223,7 @@ public partial class GeCrmContext : DbContext
 
         modelBuilder.Entity<TbEmpleadoSoporte>(entity =>
         {
-            entity.HasKey(e => e.IdEmpleadoSoporte).HasName("PK__tbEmplea__17881CD653345E86");
+            entity.HasKey(e => e.IdEmpleadoSoporte).HasName("PK__tbEmplea__17881CD6D7E2272C");
 
             entity.ToTable("tbEmpleadoSoporte");
 
@@ -252,7 +244,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdProveedor).HasName("PK_IdProveedor");
 
-            entity.ToTable("tbProveedor", tb => tb.HasTrigger("InsertBitProveedor"));
+            entity.ToTable("tbProveedor");
 
             entity.HasIndex(e => e.IdProveedor, "AK_IdProveedor").IsUnique();
 
@@ -278,9 +270,9 @@ public partial class GeCrmContext : DbContext
 
         modelBuilder.Entity<TbRol>(entity =>
         {
-            entity.HasKey(e => e.IdRol).HasName("PK__tbRol__2A49584CCCF4060B");
+            entity.HasKey(e => e.IdRol).HasName("PK__tbRol__2A49584C4B247226");
 
-            entity.ToTable("tbRol", tb => tb.HasTrigger("InsertBitRol"));
+            entity.ToTable("tbRol");
 
             entity.HasIndex(e => e.IdRol, "AK_IdRol").IsUnique();
 
@@ -293,7 +285,7 @@ public partial class GeCrmContext : DbContext
         {
             entity.HasKey(e => e.IdSoporte).HasName("PK_IdSoporte");
 
-            entity.ToTable("tbSoporte", tb => tb.HasTrigger("InsertBitSoporte"));
+            entity.ToTable("tbSoporte");
 
             entity.HasIndex(e => e.IdSoporte, "AK_Soporte").IsUnique();
 

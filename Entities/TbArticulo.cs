@@ -27,7 +27,8 @@ public partial class TbArticulo
 
     public bool Activo { get; set; }
 
-    public virtual TbProveedor IdProveedorNavigation { get; set; } = null!;
+    //public virtual TbProveedor IdProveedorNavigation { get; set; } = null!;
+    public virtual TbProveedor? IdProveedorNavigation { get; set; }
 
     public virtual ICollection<TbDatosCompra> TbDatosCompras { get; set; } = new List<TbDatosCompra>();
 
