@@ -10,11 +10,6 @@
     <link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
     <link href="~/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
-    @* <title>@ViewData["Title"] - GE</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/FrontEnd.styles.css" asp-append-version="true" /> *@
-
     <!-- Bootstrap CSS -->
     <link href="~/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="~/assets/css/bootstrap-extended.css" rel="stylesheet" />
@@ -645,8 +640,8 @@
 
     <!-- Bootstrap bundle JS -->
     <script src="~/assets/js/bootstrap.bundle.min.js"></script>
-    @* <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> *@
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   @*  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> *@
 
     <!--plugins-->
     <script src="~/assets/js/jquery.min.js"></script>
@@ -665,39 +660,8 @@
 
     <!--app-->
     <script src="~/assets/js/app.js"></script>
-    @* <script src="~/assets/js/index.js"></script> *@
 
-    @*  <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script> *@
     @await RenderSectionAsync("Scripts", required: false)
-
-    @* <script type="text/javascript">
-        $(document).ready(function () {
-            var table = $('#dataTable').DataTable({
-                "language": {
-                    "url": "//cdn.datatables.net/plug-ins/1.13.1/i18n/es-ES.json"
-                },
-                select: true,
-                dom: 'Blfrtip',
-                lengthMenu: [
-                    [10, 25, 50, -1],
-                    ['10', '25', '50', 'Todo']
-                ],
-                dom: 'Bfrtip',
-                buttons: [
-                    { extend: 'copy', text: '<i  aria-hidden="true">COPIAR</i>' },
-                    { extend: 'csv', text: '<i >CSV</i>' },
-                    { extend: 'excel', text: '<i  aria-hidden="true">EXCEL</i>' },
-                    { extend: 'pdf', text: '<i  aria-hidden="true">PDF</i>' },
-                    { extend: 'print', text: '<i  aria-hidden="true">IMPRIMIR</i>' },
-                    'pageLength'
-                ],
-            });
-            table.buttons().container()
-                .appendTo('#datatable_wrapper .col-md-6:eq(0)');
-        });
-    </script> *@
 
 </body>
 </html>

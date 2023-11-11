@@ -15,7 +15,6 @@
             { extend: 'csv', text: '<i >CSV</i>' },
             { extend: 'excel', text: '<i  aria-hidden="true">EXCEL</i>' },
             { extend: 'pdf', text: '<i  aria-hidden="true">PDF</i>' },
-            { extend: 'print', text: '<i  aria-hidden="true">IMPRIMIR</i>' },
             'pageLength'
         ],
     });
