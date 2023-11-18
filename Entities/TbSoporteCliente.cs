@@ -7,11 +7,11 @@ public partial class TbSoporteCliente
 {
     public int IdSoporteCliente { get; set; }
 
-    public int IdSoporte { get; set; }
+    public int IdSoporteSc { get; set; }
 
-    public int IdCliente { get; set; }
+    public int IdClienteSc { get; set; }
 
-    public virtual TbCliente IdClienteNavigation { get; set; } = null!;
+    public virtual TbCliente IdClienteScNavigation { get; set; } = null!;
 
-    public virtual TbSoporte IdSoporteNavigation { get; set; } = null!;
+    public virtual TbSoporte IdSoporteScNavigation { get; set; } = null!;
 }

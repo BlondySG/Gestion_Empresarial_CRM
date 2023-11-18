@@ -9,7 +9,7 @@ public partial class TbEmpleado
 
     public string Cedula { get; set; } = null!;
 
-    public string? Foto { get; set; }
+    public string? RutaFoto { get; set; }
 
     public string Nombre { get; set; } = null!;
 
@@ -36,6 +36,4 @@ public partial class TbEmpleado
     public virtual ICollection<TbBitacora> TbBitacoras { get; set; } = new List<TbBitacora>();
 
     public virtual ICollection<TbEmpleadoSoporte> TbEmpleadoSoportes { get; set; } = new List<TbEmpleadoSoporte>();
-
-    public virtual ICollection<TbSoporte> TbSoportes { get; set; } = new List<TbSoporte>();
 }

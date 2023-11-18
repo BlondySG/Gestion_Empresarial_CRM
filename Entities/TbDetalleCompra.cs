@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace Entities;
 
-public partial class TbDatosCompra
+public partial class TbDetalleCompra
 {
-    public int IdCompra { get; set; }
+    public int IdDetalleCompra { get; set; }
 
     public string NumFacturaCompra { get; set; } = null!;
 
@@ -19,13 +19,11 @@ public partial class TbDatosCompra
 
     public decimal TotalCompra { get; set; }
 
-    public DateTime FechaCompra { get; set; }
+    public int IdCompraP { get; set; }
 
-    public int IdProveedor { get; set; }
+    public int IdProductoP { get; set; }
 
-    public int IdArticulo { get; set; }
+    public virtual TbCompra IdCompraPNavigation { get; set; } = null!;
 
-    public virtual TbArticulo IdArticuloNavigation { get; set; } = null!;
-
-    public virtual TbProveedor IdProveedorNavigation { get; set; } = null!;
+    public virtual TbProducto IdProductoPNavigation { get; set; } = null!;
 }

@@ -19,9 +19,7 @@ public partial class TbCliente
 
     public bool Activo { get; set; }
 
-    public virtual ICollection<TbDatosVentum> TbDatosVenta { get; set; } = new List<TbDatosVentum>();
-
     public virtual ICollection<TbSoporteCliente> TbSoporteClientes { get; set; } = new List<TbSoporteCliente>();
 
-    public virtual ICollection<TbSoporte> TbSoportes { get; set; } = new List<TbSoporte>();
+    public virtual ICollection<TbVenta> TbVenta { get; set; } = new List<TbVenta>();
 }

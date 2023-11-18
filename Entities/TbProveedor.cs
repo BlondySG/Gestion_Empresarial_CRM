@@ -21,7 +21,7 @@ public partial class TbProveedor
 
     public bool Activo { get; set; }
 
-    public virtual ICollection<TbArticulo> TbArticulos { get; set; } = new List<TbArticulo>();
+    public virtual ICollection<TbCompra> TbCompras { get; set; } = new List<TbCompra>();
 
-    public virtual ICollection<TbDatosCompra> TbDatosCompras { get; set; } = new List<TbDatosCompra>();
+    public virtual ICollection<TbProducto> TbProductos { get; set; } = new List<TbProducto>();
 }
