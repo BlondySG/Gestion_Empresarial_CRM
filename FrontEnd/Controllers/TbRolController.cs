@@ -15,39 +15,6 @@ namespace FrontEnd.Controllers
         }
         #endregion
 
-        #region Read
-        // GET: TbRolController
-        public ActionResult Index()
-        {
-            try
-            {
-                List<TbRolViewModel> roles = _tbRolHelper.GetAll();
-                //ViewBag.Title = "Todos los Roles";
-                return View(roles);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            
-        }
-
-        // GET: TbRolController/Details/5
-        [HttpGet]
-        public ActionResult Details(int id)
-        {
-            try
-            {
-                TbRolViewModel rolViewModel = _tbRolHelper.Details(id);
-                return View(rolViewModel);
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-        }
-        #endregion
-
         #region Create
         // GET: TbRolController/Create
         public ActionResult Create()
@@ -71,6 +38,39 @@ namespace FrontEnd.Controllers
             catch (HttpRequestException)
             {
                 return RedirectToAction("Error", "Home");
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        #endregion
+
+        #region Read
+        // GET: TbRolController
+        public ActionResult Index()
+        {
+            try
+            {
+                List<TbRolViewModel> roles = _tbRolHelper.GetAll();
+                //ViewBag.Title = "Todos los Roles";
+                return View(roles);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        // GET: TbRolController/Details/5
+        [HttpGet]
+        public ActionResult Details(int id)
+        {
+            try
+            {
+                TbRolViewModel rolViewModel = _tbRolHelper.Details(id);
+                return View(rolViewModel);
             }
             catch (Exception)
             {

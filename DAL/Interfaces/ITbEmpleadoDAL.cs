@@ -2,7 +2,7 @@
 
 namespace DAL.Interfaces
 {
-    public interface ITbRolDAL : IDALGeneric<TbRol>
+    public interface ITbEmpleadoDAL: IDALGeneric<TbEmpleado>
     {
     }
 }

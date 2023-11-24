@@ -1,0 +1,139 @@
+﻿@model IEnumerable<FrontEnd.Models.TbEmpleadoViewModel>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3">Empleados</div>
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a href="javascript:;"><i class="bi bi-person-plus"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Empleado</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="row">
+    <div class="col-sm-12">
+
+        <!--Inicio tarjeta-->
+        <div class="card">
+            <h6 class="card-header mb-0 text-uppercase">Detalle Empleado</h6>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <p>
+                        <a asp-action="Create"><button class="btn btn-success">Nuevo Empleado</button></a>
+                    </p>
+                    <table id="dataTable" class="table table-striped table-bordered">
+                        <thead class="table-dark">
+                            <tr>
+                                @* <th>
+                                @Html.DisplayNameFor(model => model.IdEmpleado)
+                                </th>
+                                <th>
+                                @Html.DisplayNameFor(model => model.Cedula)
+                                </th>
+                                <th>
+                                @Html.DisplayNameFor(model => model.RutaFoto)
+                                </th> *@
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Nombre)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Apellido1)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Apellido2)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.TelefonoEmpleado)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.CorreoEmpleado)
+                                </th>
+                                @* th>
+                                    @Html.DisplayNameFor(model => model.Direccion)
+                                    </th>
+                                    <th>
+                                    @Html.DisplayNameFor(model => model.NombreContacto)
+                                    </th>
+                                    <th>
+                                    @Html.DisplayNameFor(model => model.TelefonoContacto)
+                                    </th> *@
+                                 <th>
+                                    @Html.DisplayNameFor(model => model.IdRol)
+                                </th>
+                                <th>
+                                    @Html.DisplayNameFor(model => model.Activo)
+                                </th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @* <td>
+                                @Html.DisplayFor(modelItem => item.IdEmpleado)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.Cedula)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.RutaFoto)
+                                </td> *@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Nombre)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Apellido1)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Apellido2)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TelefonoEmpleado)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.CorreoEmpleado)
+                                    </td>
+                                    @* <td>
+                                @Html.DisplayFor(modelItem => item.Direccion)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.NombreContacto)
+                                </td>
+                                <td>
+                                @Html.DisplayFor(modelItem => item.TelefonoContacto)
+                                </td> *@
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.TbRol.NombreRol)
+                                    </td>
+                                    <td>
+                                        @Html.DisplayFor(modelItem => item.Activo)
+                                    </td>
+                                    <td>
+                                        @Html.ActionLink("", "Edit",null, new { id=item.IdEmpleado}, new { @class="bi bi-pencil-fill text-warning"}) |
+                                        @Html.ActionLink("", "Details",null, new { id=item.IdEmpleado }, new { @class="bi bi-eye-fill text-primary"}) |
+                                        @Html.ActionLink("", "Delete",null, new { id=item.IdEmpleado }, new { @class="bi bi-trash-fill text-danger"})
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+            <!--Fin tarjeta-->
+
+        </div>
+    </div>
+</div>
+<!--end page main-->
