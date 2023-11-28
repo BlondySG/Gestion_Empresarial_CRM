@@ -53,7 +53,7 @@ namespace BackEnd.Controllers
             try
             {
                 List<TbVenta> ventas = new List<TbVenta>();
-                venta = ventaDAL.GetAll().ToList();
+                ventas = ventaDAL.GetAll().ToList();
                 List<TbVentaModel> resultado = new List<TbVentaModel>();
                 foreach (TbVenta venta in ventas)
                 {
