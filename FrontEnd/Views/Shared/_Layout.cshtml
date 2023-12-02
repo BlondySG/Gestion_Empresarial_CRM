@@ -30,6 +30,7 @@
     <title>GE CRM</title>
 
 </head>
+
 <body>
     <!--start wrapper-->
     <div class="wrapper">
@@ -42,22 +43,14 @@
                 <div class="top-navbar d-none d-xl-block">
                     <ul class="navbar-nav align-items-center">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">Dashboard</a>
+                            <a href="@Url.Action("Index", "Home")" class="nav-link">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="app-emailbox.html">Email</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="javascript:;">Projects</a>
-                        </li>
-                        <li class="nav-item d-none d-xxl-block">
-                            <a class="nav-link" href="javascript:;">Events</a>
-                        </li>
-                        <li class="nav-item d-none d-xxl-block">
-                            <a class="nav-link" href="app-to-do.html">Todo</a>
+                            <a href="@Url.Action("Index", "Home")" class="nav-link">TODO</a>
                         </li>
                     </ul>
                 </div>
+
                 <div class="search-toggle-icon d-xl-none ms-auto">
                     <i class="bi bi-search"></i>
                 </div>
@@ -425,6 +418,7 @@
             </nav>
         </header>
         <!--end top header-->
+
         <!--start sidebar -->
         <aside class="sidebar-wrapper">
             <div class="iconmenu">
@@ -432,23 +426,17 @@
                     <div class="nav-toggle-icon"><i class="bi bi-list"></i></div>
                 </div>
                 <ul class="nav nav-pills flex-column">
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Dashboards">
+                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Gestión">
                         <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-dashboards" type="button"><i class="bi bi-house-door-fill"></i></button>
                     </li>
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Application">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-application" type="button"><i class="bi bi-grid-fill"></i></button>
+                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Transacciones">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-application" type="button"><i class="bi bi-file-earmark-spreadsheet-fill"></i></button>
                     </li>
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="eCommerce">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-ecommerce" type="button"><i class="bi bi-bag-check-fill"></i></button>
+                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Soporte">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-ecommerce" type="button"><i class="bi bi-headset"></i></button>
                     </li>
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Authentication">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-authentication" type="button"><i class="bi bi-lock-fill"></i></button>
-                    </li>
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Charts">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-charts" type="button"><i class="bi bi-pie-chart-fill"></i></button>
-                    </li>
-                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Pages">
-                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-pages" type="button"><i class="bi bi-award-fill"></i></button>
+                    <li class="nav-item" data-bs-toggle="tooltip" data-bs-placement="right" title="Usuarios">
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#pills-authentication" type="button"><i class="bi bi-person-plus-fill"></i></button>
                     </li>
                 </ul>
             </div>
@@ -457,99 +445,85 @@
                     <img src="assets/images/brand-logo-2.png" width="140" alt="" />
                 </div>
                 <div class="tab-content">
+
                     <div class="tab-pane fade" id="pills-dashboards">
                         <div class="list-group list-group-flush">
                             <div class="list-group-item">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">Dashboards</h5>
+                                    <h5 class="mb-0">Gestión Comercial</h5>
                                 </div>
-                                <small class="mb-0">Some placeholder content</small>
+                                <small class="mb-0">Administración Comercial</small>
                             </div>
-                            <a href="index.html" class="list-group-item"><i class="bi bi-cart-plus"></i>e-Commerce</a>
-                            <a href="index2.html" class="list-group-item"><i class="bi bi-wallet"></i>Sales</a>
-                            <a href="index3.html" class="list-group-item"><i class="bi bi-bar-chart-line"></i>Analytics</a>
-                            <a href="index4.html" class="list-group-item"><i class="bi bi-archive"></i>Project Management</a>
-                            <a href="index5.html" class="list-group-item"><i class="bi bi-cast"></i>CMS Dashboard</a>
+                            <a href="@Url.Action("Index", "TbCliente")" class="list-group-item">
+                                <i class="lni lni-customer"></i>Clientes
+                            </a>
+                            <a href="@Url.Action("Index", "TbProducto")" class="list-group-item">
+                                <i class="bi bi-box-seam"></i>Productos
+                            </a>
+                            <a href="@Url.Action("Index", "TbProveedor")" class="list-group-item">
+                                <i class="lni lni-network"></i>Proveedores
+                            </a>
                         </div>
                     </div>
+
                     <div class="tab-pane fade" id="pills-application">
                         <div class="list-group list-group-flush">
                             <div class="list-group-item">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">Application</h5>
+                                    <h5 class="mb-0">Facturación</h5>
                                 </div>
-                                <small class="mb-0">Some placeholder content</small>
+                                <small class="mb-0">Compras - Ventas</small>
                             </div>
-                            <a href="app-emailbox.html" class="list-group-item"><i class="bi bi-envelope"></i>Email</a>
-                            <a href="app-chat-box.html" class="list-group-item"><i class="bi bi-chat-left-text"></i>Chat Box</a>
-                            <a href="app-file-manager.html" class="list-group-item"><i class="bi bi-archive"></i>File Manager</a>
-                            <a href="app-to-do.html" class="list-group-item"><i class="bi bi-check2-square"></i>Todo List</a>
-                            <a href="app-invoice.html" class="list-group-item"><i class="bi bi-receipt"></i>Invoice</a>
+                            <a href="@Url.Action("Index", "TbCompra")" class="list-group-item">
+                                <i class="bi bi-plus-square"></i>Compras
+                            </a>
+                            <a href="@Url.Action("Index", "TbDetalleCompra")" class="list-group-item">
+                                <i class="bi bi-bar-chart"></i>Detalle de Compras
+                            </a>
+                            <a href="@Url.Action("Index", "TbVenta")" class="list-group-item">
+                                <i class="bi bi-handbag"></i>Ventas
+                            </a>
+                            <a href="@Url.Action("Index", "TbDetalleVenta")" class="list-group-item">
+                                <i class="bi bi-bar-chart"></i>Detalle de Ventas
+                            </a>
                         </div>
                     </div>
+
                     <div class="tab-pane fade" id="pills-ecommerce">
                         <div class="list-group list-group-flush">
                             <div class="list-group-item">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">eCommerce</h5>
+                                    <h5 class="mb-0">Soporte</h5>
                                 </div>
-                                <small class="mb-0">Some placeholder content</small>
+                                <small class="mb-0">Soporte a Clientes</small>
                             </div>
-                            <a href="ecommerce-products-list.html" class="list-group-item"><i class="bi bi-box-seam"></i>Products List</a>
-                            <a href="ecommerce-products-grid.html" class="list-group-item"><i class="bi bi-box-seam"></i>Products Grid</a>
-                            <a href="ecommerce-products-categories.html" class="list-group-item"><i class="bi bi-card-text"></i>Products Categories</a>
-                            <a href="ecommerce-orders.html" class="list-group-item"><i class="bi bi-plus-square"></i>Orders</a>
-                            <a href="ecommerce-orders-detail.html" class="list-group-item"><i class="bi bi-handbag"></i>Orders Detail</a>
-                            <a href="ecommerce-add-new-product.html" class="list-group-item"><i class="bi bi-handbag"></i>Add New Product</a>
-                            <a href="ecommerce-add-new-product-2.html" class="list-group-item"><i class="bi bi-handbag"></i>Add New Product 2</a>
-                            <a href="ecommerce-transactions.html" class="list-group-item"><i class="bi bi-handbag"></i>Transactions</a>
+
+                            <a href="@Url.Action("Index", "TbSoporte")" class="list-group-item">
+                                <i class="lni lni-agenda"></i>Soporte
+                            </a>
+                            <a href="@Url.Action("Index", "TbTipo")" class="list-group-item">
+                                <i class="lni lni-checkbox"></i>Tipo de Soporte
+                            </a>
+                            <a href="@Url.Action("Index", "TbBitacora")" class="list-group-item">
+                                <i class="lni lni-archive"></i>Bitácora
+                            </a>
                         </div>
                     </div>
+
                     <div class="tab-pane fade" id="pills-authentication">
                         <div class="list-group list-group-flush">
                             <div class="list-group-item">
                                 <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">Authentication</h5>
+                                    <h5 class="mb-0">Gestión Usuarios</h5>
                                 </div>
-                                <small class="mb-0">Some placeholder content</small>
+                                <small class="mb-0">Administración de Usuarios</small>
                             </div>
-                            <a href="authentication-signin.html" class="list-group-item"><i class="bi bi-easel"></i>Sign In</a>
-                            <a href="authentication-signin-with-header-footer.html" class="list-group-item d-flex align-items-center"><i class="bi bi-eject"></i>Sign In with Header & Footer</a>
-                            <a href="authentication-signup.html" class="list-group-item"><i class="bi bi-emoji-heart-eyes"></i>Sign Up</a>
-                            <a href="authentication-signup-with-header-footer.html" class="list-group-item d-flex align-items-center"><i class="bi bi-eye"></i>Sign Up with Header & Footer</a>
-                            <a href="authentication-forgot-password.html" class="list-group-item"><i class="bi bi-file-earmark-code"></i>Forgot Password</a>
-                            <a href="authentication-reset-password.html" class="list-group-item"><i class="bi bi-gem"></i>Reset Password</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-charts">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">Charts</h5>
-                                </div>
-                                <small class="mb-0">Some placeholder content</small>
-                            </div>
-                            <a href="charts-chartjs.html" class="list-group-item"><i class="bi bi-bar-chart"></i>Chart JS</a>
-                            <a href="charts-apex-chart.html" class="list-group-item"><i class="bi bi-pie-chart"></i>Apex Chart</a>
-                            <a href="charts-highcharts.html" class="list-group-item"><i class="bi bi-graph-up"></i>Highcharts</a>
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="pills-pages">
-                        <div class="list-group list-group-flush">
-                            <div class="list-group-item">
-                                <div class="d-flex w-100 justify-content-between">
-                                    <h5 class="mb-0">Pages</h5>
-                                </div>
-                                <small class="mb-0">Some placeholder content</small>
-                            </div>
-                            <a href="pages-user-profile.html" class="list-group-item"><i class="bi bi-alarm"></i>User Profile</a>
-                            <a href="pages-timeline.html" class="list-group-item"><i class="bi bi-archive"></i>Timeline</a>
-                            <a href="pages-faq.html" class="list-group-item"><i class="bi bi-question-diamond"></i>FAQ</a>
-                            <a href="pages-pricing-tables.html" class="list-group-item"><i class="bi bi-tags"></i>Pricing</a>
-                            <a href="pages-errors-404-error.html" class="list-group-item"><i class="bi bi-bug"></i>404 Error</a>
-                            <a href="pages-errors-500-error.html" class="list-group-item"><i class="bi bi-diagram-2"></i>500 Error</a>
-                            <a href="pages-errors-coming-soon.html" class="list-group-item"><i class="bi bi-egg-fried"></i>Coming Soon</a>
-                            <a href="pages-blank-page.html" class="list-group-item"><i class="bi bi-flag"></i>Blank Page</a>
+                            <a href="@Url.Action("Index", "TbRol")" class="list-group-item">
+                                <i class="fadeIn animated bx bx-user-check"></i>Roles
+                            </a>
+                            <a href="@Url.Action("Index", "TbEmpleado")" class="list-group-item">
+                                <i class="fadeIn animated bx bx-user-plus"></i>Empleados
+                            </a>
                         </div>
                     </div>
                 </div>

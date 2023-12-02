@@ -31,8 +31,8 @@ namespace FrontEnd.Models
         [Required(ErrorMessage = "Es obligatorio agregar el cliente")]
         public int IdClienteV { get; set; }
 
-       // public IEnumerable<TbClienteViewModel> Clientes { get; set; }
+        public IEnumerable<TbClienteViewModel> Clientes { get; set; }
         //public List<TbRolViewModel> Roles { get; set; }
-        //public TbClienteViewModel TbCliente{ get; set; }
+        public TbClienteViewModel TbCliente{ get; set; }
     }
 }

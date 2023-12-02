@@ -68,7 +68,7 @@ namespace FrontEnd.Helpers
                 HttpResponseMessage response = serviceObj.GetResponse("api/tbventa/" + id.ToString());
                 response.EnsureSuccessStatusCode();
                 TbVentaViewModel ventaViewModel = response.Content.ReadAsAsync<TbVentaViewModel>().Result;
-                ventaViewModel.TbVenta = this.GetVenta(ventaViewModel.IdVenta);
+                ventaViewModel.TbCliente = this.GetCliente(ventaViewModel.IdClienteV);
 
                 return ventaViewModel;
             }
@@ -88,7 +88,7 @@ namespace FrontEnd.Helpers
                 HttpResponseMessage response = serviceObj.GetResponse("api/tbventa/" + id.ToString());
                 response.EnsureSuccessStatusCode();
                 TbVentaViewModel tbVentaViewModel = response.Content.ReadAsAsync<TbVentaViewModel>().Result;
-                tbVentaViewModel.Ventas = this.GetVentas();
+                tbVentaViewModel.Clientes = this.GetClientes();
 
                 return tbVentaViewModel;
             }
@@ -108,7 +108,7 @@ namespace FrontEnd.Helpers
                 HttpResponseMessage response = serviceObj.GetResponse("api/tbventa/" + id.ToString());
                 response.EnsureSuccessStatusCode();
                 TbVentaViewModel tbVentaViewModel = response.Content.ReadAsAsync<TbVentaViewModel>().Result;
-                tbVentaViewModel.TbVenta = this.GetVenta(tbVentaViewModel.IdVenta);
+                tbVentaViewModel.TbCliente = this.GetCliente(tbVentaViewModel.IdClienteV);
 
                 return tbVentaViewModel;
             }

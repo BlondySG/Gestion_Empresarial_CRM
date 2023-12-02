@@ -53,7 +53,6 @@ namespace FrontEnd.Controllers
             try
             {
                 List<TbRolViewModel> roles = _tbRolHelper.GetAll();
-                //ViewBag.Title = "Todos los Roles";
                 return View(roles);
             }
             catch (Exception)

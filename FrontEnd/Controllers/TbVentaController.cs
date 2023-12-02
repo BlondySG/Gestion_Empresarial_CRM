@@ -40,7 +40,7 @@ namespace FrontEnd.Controllers
         {
             List<TbClienteViewModel> clientes = _tbclienteHelper.GetAll();
 
-            return cliente;
+            return clientes;
         }
         #endregion
 
@@ -95,7 +95,7 @@ namespace FrontEnd.Controllers
 
                 foreach (var item in ventas)
                 {
-                    item.TbCliente = _tbclienteHelper.Details(item.IdCliente);
+                    item.TbCliente = _tbclienteHelper.Details(item.IdClienteV);
                 }
                 return View(ventas);
             }
@@ -106,6 +106,7 @@ namespace FrontEnd.Controllers
         }
 
         // GET: TbVentaController/Details/5
+        [HttpGet]
         public ActionResult Details(int id)
         {
             try
